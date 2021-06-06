@@ -11,3 +11,4 @@ one table that includes 0-2 mismatches and a table with the combinations of all 
 "M1" for sequences with one mismatch, "M2" with two mismatches and "-" for no primer match. 
 
 ![alt text](/img/ttv_primer_comb_table.png)
+This image displayes the table with the combination of all tables
