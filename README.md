@@ -10,4 +10,5 @@ There are four tables created. One table only for extact primer results, one tab
 one table that includes 0-2 mismatches and a table with the combinations of all three tables displaying which sequnces has a exact match with the label "M0", 
 "M1" for sequences with one mismatch, "M2" with two mismatches and "-" for no primer match. 
 
+![alt text](/img/ttv_primer_comb_table.png)
 This image displayes the table with the combination of all tables
