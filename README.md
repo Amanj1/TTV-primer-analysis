@@ -21,9 +21,10 @@ There are two versions of each bar chart. First bar chart is UTR primers in rela
 The pipeline does not reads sequences from both the positive and negative strand. It only reads sequences based on positive. If you want to read the reverse complement of your sequences I would advise that you create reverse sequences and keep the same fasta header. All calculations are based on the header and if you get a primer match in any of the sequences with the same header it counts as one match. 
 
  ## Software requirements 
- - Nextflow
- - python3
- - numpy (pyhton 3 library)
- - matplotlib (pyhton 3 library)
- - seqtk
- - seqkit
+ All versions of the softwares are compatible with the pipeline. 
+ - Nextflow DSL1  (https://www.nextflow.io/)
+ - Python3   (https://www.python.org/downloads/)
+    - numpy (pyhton 3 library)
+    - matplotlib (pyhton 3 library)
+ - seqtk     (https://github.com/lh3/seqtk)
+ - seqkit    (https://bioinf.shenwei.me/seqkit/)
