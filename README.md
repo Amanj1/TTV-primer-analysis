@@ -13,3 +13,6 @@ one table that includes 0-2 mismatches and a table with the combinations of all 
 ![alt text](/img/ttv_primer_comb_table.png)
 
 This image displayes the table with the combination of all tables
+
+In img folder you can find different bar chart plots that are produced by the pipeline. 
+There are two versions of each bar chart. First bar chart is UTR primers in relation to each other and the second is the relation to all primer and total sequences used in the pipeline. 
