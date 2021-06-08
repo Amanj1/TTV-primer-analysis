@@ -51,6 +51,24 @@ Python3 modules
 | numpy     | 1.17.2  |
 | matplotlib| 3.3.0   |
 
+## Prerequisites
+To ensure that resources are available or to increase the number of threads, you can change the configuration for profile 'amanj' contained in the conf folder. It is good to remember that all three processes contained in the configuration file are the only ones capable of multithreading and run simultaneously. Remaining processes are not listed in the configuration file because they run in one thread only.
+
+In the following code, the number can be changed after 'cpus' (threads):
+```
+process {
+    withName: grep_misMatch0{
+        cpus = 13
+    }
+    withName: grep_misMatch1{
+        cpus = 13
+    }
+    withName: grep_misMatch2{
+        cpus = 13
+    }
+}
+```
+
 ## Running TTV-primer-analysis
 The user should create a directory called 'input_data' and store all samples must be in fasta format with the file extension ".fasta". 
 It is also possible to change the following code line to the preferred filename and file extension, but the content of the files should be in fasta format:
@@ -64,5 +82,9 @@ You should take into account that the execution time is linear.
 
 To run the pipeline in command line:
 ```
-nextflow -C ttv_utr_primer_analysis.config run ttv_utr_primer_analysis.nf
+nextflow -C ttv_utr_primer_analysis.config run ttv_utr_primer_analysis.nf -profile amanj
+```
+To run the pipeline in command line and resume from cache memory:
+```
+nextflow -C ttv_utr_primer_analysis.config run ttv_utr_primer_analysis.nf -profile amanj -resume
 ```
