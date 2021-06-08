@@ -17,6 +17,14 @@ This image displayes the table with the combination of all tables
 In img folder you can find different bar chart plots that are produced by the pipeline. 
 There are two versions of each bar chart. First bar chart is UTR primers in relation to each other and the second is the relation to all primer and total sequences used in the pipeline. 
 
+#### Universal TM-PCR
+
+| Oligonucleotide | Sequence (5'-3')   | Genome localization | Position (nt) |
+| --------------  | ------------------ | ------------------  |  -----------  |
+| AMTS            | GTGCCGIAGGTGAGTTTA | UTR                 | 177–194       |
+| AMTAS           | AGCCCGGCCAGTCC     | UTR                 | 226–239       |
+| AMTPTU          | TCAAGGGGCAATTCGGGCT| UTR                 | 205–223       |
+
 ## Please note
 The pipeline does not reads sequences from both the positive and negative strand. It only reads sequences based on positive. If you want to read the reverse complement of your sequences I would advise that you create reverse sequences and keep the same fasta header. All calculations are based on the header and if you get a primer match in any of the sequences with the same header it counts as one match. 
 
@@ -37,15 +45,15 @@ Softwares
 | Seqtk    | 1.3-r106|
 | Seqkit   | 0.13.2  |
 
-Python modules
+Python3 modules
 | Package   | Version |
 | --------- | ------- |
 | numpy     | 1.17.2  |
 | matplotlib| 3.3.0   |
 
 ## Running TTV-primer-analysis
-The user should create a directory called 'input_data' and store all samples in fasta format with the file exension ".fasta". 
-It is also possible to change the follwing code line to the preferred filename and file extension:
+The user should create a directory called 'input_data' and store all samples must be in fasta format with the file extension ".fasta". 
+It is also possible to change the following code line to the preferred filename and file extension, but the content of the files should be in fasta format:
 ```
 /* input files */
 //contig sequences
