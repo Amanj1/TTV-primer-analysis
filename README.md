@@ -43,3 +43,18 @@ Python modules
 | numpy     | 1.17.2  |
 | matplotlib| 3.3.0   |
 
+## Running TTV-primer-analysis
+The user should create a directory called 'input_data' and store all samples in fasta format with the file exension ".fasta". 
+It is also possible to change the follwing code line to the preferred filename and file extension:
+```
+/* input files */
+//contig sequences
+contig_files = Channel.fromFilePairs("*.fasta",size:1) 
+```
+It is preferred to use longer sequences as input data but works fine with short reads.
+You should take into account that the execution time is linear.
+
+To run the pipeline in command line:
+```
+nextflow -C ttv_utr_primer_analysis.config run ttv_utr_primer_analysis.nf
+```
