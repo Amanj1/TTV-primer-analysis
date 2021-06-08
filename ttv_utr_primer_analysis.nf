@@ -102,13 +102,13 @@ process grep_misMatch0{
 #!/bin/bash
 #Universal TM-PCR
 #AMTS
-seqkit grep --by-seq --max-mismatch 0 --threads 13 --pattern "GTGCCGAAGGTGAGTTTA" ${seq} > AMTS_UTR.fasta
+seqkit grep --by-seq --max-mismatch 0 --threads ${task.cpus} --pattern "GTGCCGAAGGTGAGTTTA" ${seq} > AMTS_UTR.fasta
 sleep 2
-seqkit grep --by-seq --max-mismatch 0 --threads 13 --pattern "GTGCCGTAGGTGAGTTTA" ${seq} >> AMTS_UTR.fasta
+seqkit grep --by-seq --max-mismatch 0 --threads ${task.cpus} --pattern "GTGCCGTAGGTGAGTTTA" ${seq} >> AMTS_UTR.fasta
 sleep 2
-seqkit grep --by-seq --max-mismatch 0 --threads 13 --pattern "GTGCCGGAGGTGAGTTTA" ${seq} >> AMTS_UTR.fasta
+seqkit grep --by-seq --max-mismatch 0 --threads ${task.cpus} --pattern "GTGCCGGAGGTGAGTTTA" ${seq} >> AMTS_UTR.fasta
 sleep 2
-seqkit grep --by-seq --max-mismatch 0 --threads 13 --pattern "GTGCCGCAGGTGAGTTTA" ${seq} >> AMTS_UTR.fasta
+seqkit grep --by-seq --max-mismatch 0 --threads ${task.cpus} --pattern "GTGCCGCAGGTGAGTTTA" ${seq} >> AMTS_UTR.fasta
 sleep 2
 cat AMTS_UTR.fasta | grep ">" | cut -d ">" -f 2 | awk '!seen[\$0]++' > tmp_list.txt
 sleep 2
@@ -116,7 +116,7 @@ seqtk subseq ${seq} tmp_list.txt > ${sample_id}_AMTS_UTR_M0.fasta
 sleep 2
 rm tmp_list.txt AMTS_UTR.fasta
 #AMTAS
-seqkit grep --by-seq --max-mismatch 0 --threads 13 --pattern "AGCCCGGCCAGTCC" ${seq} > AMTAS_UTR.fasta
+seqkit grep --by-seq --max-mismatch 0 --threads ${task.cpus} --pattern "AGCCCGGCCAGTCC" ${seq} > AMTAS_UTR.fasta
 sleep 2
 cat AMTAS_UTR.fasta | grep ">" | cut -d ">" -f 2 | awk '!seen[\$0]++' > tmp_list.txt
 sleep 2
@@ -124,7 +124,7 @@ seqtk subseq ${seq} tmp_list.txt > ${sample_id}_AMTAS_UTR_M0.fasta
 sleep 2
 rm tmp_list.txt AMTAS_UTR.fasta
 #AMTPTU
-seqkit grep --by-seq --max-mismatch 0 --threads 13 --pattern "TCAAGGGGCAATTCGGGCT" ${seq} > AMTPTU_UTR.fasta
+seqkit grep --by-seq --max-mismatch 0 --threads ${task.cpus} --pattern "TCAAGGGGCAATTCGGGCT" ${seq} > AMTPTU_UTR.fasta
 sleep 2
 cat AMTPTU_UTR.fasta | grep ">" | cut -d ">" -f 2 | awk '!seen[\$0]++' > tmp_list.txt
 seqtk subseq ${seq} tmp_list.txt > ${sample_id}_AMTPTU_UTR_M0.fasta
@@ -151,27 +151,27 @@ process grep_misMatch1{
 #!/bin/bash
 #Universal TM-PCR
 #AMTS
-seqkit grep --by-seq --max-mismatch 1 --threads 13 --pattern "GTGCCGAAGGTGAGTTTA" ${seq} > AMTS_UTR.fasta
+seqkit grep --by-seq --max-mismatch 1 --threads ${task.cpus} --pattern "GTGCCGAAGGTGAGTTTA" ${seq} > AMTS_UTR.fasta
 sleep 2
-seqkit grep --by-seq --max-mismatch 1 --threads 13 --pattern "GTGCCGTAGGTGAGTTTA" ${seq} >> AMTS_UTR.fasta
+seqkit grep --by-seq --max-mismatch 1 --threads ${task.cpus} --pattern "GTGCCGTAGGTGAGTTTA" ${seq} >> AMTS_UTR.fasta
 sleep 2
-seqkit grep --by-seq --max-mismatch 1 --threads 13 --pattern "GTGCCGGAGGTGAGTTTA" ${seq} >> AMTS_UTR.fasta
+seqkit grep --by-seq --max-mismatch 1 --threads ${task.cpus} --pattern "GTGCCGGAGGTGAGTTTA" ${seq} >> AMTS_UTR.fasta
 sleep 2
-seqkit grep --by-seq --max-mismatch 1 --threads 13 --pattern "GTGCCGCAGGTGAGTTTA" ${seq} >> AMTS_UTR.fasta
+seqkit grep --by-seq --max-mismatch 1 --threads ${task.cpus} --pattern "GTGCCGCAGGTGAGTTTA" ${seq} >> AMTS_UTR.fasta
 sleep 2
 cat AMTS_UTR.fasta | grep ">" | cut -d ">" -f 2 | awk '!seen[\$0]++' > tmp_list.txt
 seqtk subseq ${seq} tmp_list.txt > ${sample_id}_AMTS_UTR_M1.fasta
 sleep 2
 rm tmp_list.txt AMTS_UTR.fasta
 #AMTAS
-seqkit grep --by-seq --max-mismatch 1 --threads 13 --pattern "AGCCCGGCCAGTCC" ${seq} > AMTAS_UTR.fasta
+seqkit grep --by-seq --max-mismatch 1 --threads ${task.cpus} --pattern "AGCCCGGCCAGTCC" ${seq} > AMTAS_UTR.fasta
 sleep 2
 cat AMTAS_UTR.fasta | grep ">" | cut -d ">" -f 2 | awk '!seen[\$0]++' > tmp_list.txt
 seqtk subseq ${seq} tmp_list.txt > ${sample_id}_AMTAS_UTR_M1.fasta
 sleep 2
 rm tmp_list.txt AMTAS_UTR.fasta
 #AMTPTU
-seqkit grep --by-seq --max-mismatch 1 --threads 13 --pattern "TCAAGGGGCAATTCGGGCT" ${seq} > AMTPTU_UTR.fasta
+seqkit grep --by-seq --max-mismatch 1 --threads ${task.cpus} --pattern "TCAAGGGGCAATTCGGGCT" ${seq} > AMTPTU_UTR.fasta
 sleep 2
 cat AMTPTU_UTR.fasta | grep ">" | cut -d ">" -f 2 | awk '!seen[\$0]++' > tmp_list.txt
 seqtk subseq ${seq} tmp_list.txt > ${sample_id}_AMTPTU_UTR_M1.fasta
@@ -197,27 +197,27 @@ process grep_misMatch2{
 #!/bin/bash
 #Universal TM-PCR
 #AMTS
-seqkit grep --by-seq --max-mismatch 2 --threads 13 --pattern "GTGCCGAAGGTGAGTTTA" ${seq} > AMTS_UTR.fasta
+seqkit grep --by-seq --max-mismatch 2 --threads ${task.cpus} --pattern "GTGCCGAAGGTGAGTTTA" ${seq} > AMTS_UTR.fasta
 sleep 2
-seqkit grep --by-seq --max-mismatch 2 --threads 13 --pattern "GTGCCGTAGGTGAGTTTA" ${seq} >> AMTS_UTR.fasta
+seqkit grep --by-seq --max-mismatch 2 --threads ${task.cpus} --pattern "GTGCCGTAGGTGAGTTTA" ${seq} >> AMTS_UTR.fasta
 sleep 2
-seqkit grep --by-seq --max-mismatch 2 --threads 13 --pattern "GTGCCGGAGGTGAGTTTA" ${seq} >> AMTS_UTR.fasta
+seqkit grep --by-seq --max-mismatch 2 --threads ${task.cpus} --pattern "GTGCCGGAGGTGAGTTTA" ${seq} >> AMTS_UTR.fasta
 sleep 2
-seqkit grep --by-seq --max-mismatch 2 --threads 13 --pattern "GTGCCGCAGGTGAGTTTA" ${seq} >> AMTS_UTR.fasta
+seqkit grep --by-seq --max-mismatch 2 --threads ${task.cpus} --pattern "GTGCCGCAGGTGAGTTTA" ${seq} >> AMTS_UTR.fasta
 sleep 2
 cat AMTS_UTR.fasta | grep ">" | cut -d ">" -f 2 | awk '!seen[\$0]++' > tmp_list.txt
 seqtk subseq ${seq} tmp_list.txt > ${sample_id}_AMTS_UTR_M2.fasta
 sleep 2
 rm tmp_list.txt AMTS_UTR.fasta
 #AMTAS
-seqkit grep --by-seq --max-mismatch 2 --threads 13 --pattern "AGCCCGGCCAGTCC" ${seq} > AMTAS_UTR.fasta
+seqkit grep --by-seq --max-mismatch 2 --threads ${task.cpus} --pattern "AGCCCGGCCAGTCC" ${seq} > AMTAS_UTR.fasta
 sleep 2
 cat AMTAS_UTR.fasta | grep ">" | cut -d ">" -f 2 | awk '!seen[\$0]++' > tmp_list.txt
 seqtk subseq ${seq} tmp_list.txt > ${sample_id}_AMTAS_UTR_M2.fasta
 sleep 2
 rm tmp_list.txt AMTAS_UTR.fasta
 #AMTPTU
-seqkit grep --by-seq --max-mismatch 2 --threads 13 --pattern "TCAAGGGGCAATTCGGGCT" ${seq} > AMTPTU_UTR.fasta
+seqkit grep --by-seq --max-mismatch 2 --threads ${task.cpus} --pattern "TCAAGGGGCAATTCGGGCT" ${seq} > AMTPTU_UTR.fasta
 sleep 2
 cat AMTPTU_UTR.fasta | grep ">" | cut -d ">" -f 2 | awk '!seen[\$0]++' > tmp_list.txt
 seqtk subseq ${seq} tmp_list.txt > ${sample_id}_AMTPTU_UTR_M2.fasta
