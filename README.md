@@ -52,7 +52,7 @@ Python3 modules
 | matplotlib| 3.3.0   |
 
 ## Prerequisites
-To ensure that resources are available or to increase the number of threads, you can change the configuration for profile 'amanj' contained in the conf folder. It is good to remember that all three processes contained in the configuration file are the only ones capable of multithreading and run simultaneously. Remaining processes are not listed in the configuration file because they run in one thread only.
+To ensure that resources are available or to increase the number of threads, you can change the configuration for profile 'amanj' contained in the conf folder. It is good to remember that all three processes contained in the configuration file are the only ones capable of multithreading and runs simultaneously. Remaining processes are not listed in the configuration file because they run in one thread only.
 
 In the following code, the number can be changed after 'cpus' (threads):
 ```
