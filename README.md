@@ -17,7 +17,7 @@ This image displayes the table with the combination of all tables
 In img folder you can find different bar chart plots that are produced by the pipeline. 
 There are two versions of each bar chart. First bar chart is UTR primers in relation to each other and the second is the relation to all primer and total sequences used in the pipeline. 
 
-#### Universal TM-PCR
+#### Universal TM-PCR - Primer sequences used in pipeline
 
 | Oligonucleotide | Sequence (5'-3')   | Genome localization | Position (nt) |
 | --------------  | ------------------ | ------------------  |  -----------  |
