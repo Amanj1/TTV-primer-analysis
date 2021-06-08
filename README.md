@@ -29,7 +29,7 @@ The pipeline does not reads sequences from both the positive and negative strand
  - [seqtk](https://github.com/lh3/seqtk)
  - [seqkit](https://bioinf.shenwei.me/seqkit/)
 
-### Software versions used when developing pipeline
+#### Software versions used when developing pipeline
 Softwares
 | Software | Version |
 | -------- | ------- |
