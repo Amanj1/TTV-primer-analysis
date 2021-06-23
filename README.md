@@ -80,9 +80,9 @@ Once you have activated the Conda environment "ttv-primer", you can type the fol
 ```
 which python3
 
-example output would be: /home/user/anaconda3/envs/ttv-primer/bin/python3 in this file "ttv_utr_primer_analysis.nf"
+example output would be: /home/user/anaconda3/envs/ttv-primer/bin/python3
 ```
-Now you should replace the shebang line "#!/bin/python3" to "#!/home/user/anaconda3/envs/ttv-primer/bin/python3" in this file "ttv_utr_primer_analysis.nf". There should be 8 python3 shebang lines in the file. You can use any text editor to find and replace all lines. 
+Now you should replace the shebang line ``` "#!/bin/python3" ``` to ```"#!/home/user/anaconda3/envs/ttv-primer/bin/python3"``` in this file "ttv_utr_primer_analysis.nf". There should be 8 python3 shebang lines in the file. You can use any text editor to find and replace all lines. 
 
 ## Running TTV-primer-analysis
 The user should create a directory called 'input_data' and store all samples must be in fasta format with the file extension ".fasta". 
