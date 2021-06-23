@@ -2,14 +2,14 @@
 
 /*
 How to run:
-nextflow -C ttv_utr_primer_analysis.config run ttv_utr_primer_analysis.nf
+nextflow -C ttv_utr_primer_analysis.config run ttv_utr_primer_analysis.nf -profile amanj
 */
 
 params.input='input_data'
 
 /* input files */
 //contig sequences
-contig_files = Channel.fromFilePairs("*.fasta",size:1) 
+contig_files = Channel.fromFilePairs("${params.input}/*.fasta",size:1) 
 
 process filter_contig_size{
   tag {"${sample_id}"}
