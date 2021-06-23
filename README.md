@@ -41,6 +41,7 @@ The pipeline does not reads sequences from both the positive and negative strand
 Softwares
 | Software | Version |
 | -------- | ------- |
+| Nextflow | 19.07.0 |
 | Python   | 3.7.8   |
 | Seqtk    | 1.3-r106|
 | Seqkit   | 0.13.2  |
@@ -68,6 +69,20 @@ process {
     }
 }
 ```
+
+## Installing TTV-primer-analysis using Conda environment
+You could also use the "ttv-primer-env.yml" file to install all software requirements in the following terminal commands below.
+```
+conda env create -f ttv-primer-env.yml
+conda activate ttv-primer
+```
+Once you have activated the Conda environment "ttv-primer", you can type the following command in the terminal.
+```
+which python3
+
+example output would be: /home/user/anaconda3/envs/ttv-primer/bin/python3 in this file "ttv_utr_primer_analysis.nf"
+```
+Now you should replace the shebang line "#!/bin/python3" to "#!/home/user/anaconda3/envs/ttv-primer/bin/python3" in this file "ttv_utr_primer_analysis.nf". There should be 8 python3 shebang lines in the file. You can use any text editor to find and replace all lines. 
 
 ## Running TTV-primer-analysis
 The user should create a directory called 'input_data' and store all samples must be in fasta format with the file extension ".fasta". 
